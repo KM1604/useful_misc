@@ -1,0 +1,5 @@
+=FILTER(A1:E100,(A1:A100>90)*(B1:B100>50),"")
+
+-- Reminder: You can combine Boolean operators in this way. Multiplication for AND(), Addition for OR()
+-- This works because FALSE reads as 0, while TRUE is any nonzero value.
+-- Order of operations can be combined for complex filtering needs.

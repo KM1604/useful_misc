@@ -1,0 +1,3 @@
+Excel Coalesce, always goes in the order listed.
+
+{=INDEX(C2:D2,MATCH(FALSE,ISBLANK(C2:D2),FALSE))}

@@ -1,2 +1,20 @@
 -- Excel formula to generate a UUID (random characters)
 =LOWER(CONCATENATE(DEC2HEX(RANDBETWEEN(0,POWER(16,8)),8),"-",DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4),"-","4",DEC2HEX(RANDBETWEEN(0,POWER(16,3)),3),"-",DEC2HEX(RANDBETWEEN(8,11)),DEC2HEX(RANDBETWEEN(0,POWER(16,3)),3),"-",DEC2HEX(RANDBETWEEN(0,POWER(16,8)),8),DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4)))
+
+-- Excel formula to generate a TUID (my invention)
+-- format is yyyymmdd-hhmm-[RANDOMHEX]
+-- can be sorted asc or desc to sort by timestamp of initial TUID.
+
+=LOWER(
+CONCATENATE(
+TEXT(NOW(),"yyyymmdd-hhmm"),
+"-",
+DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4),
+"-",
+DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4),
+"-",
+DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4),
+DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4),
+DEC2HEX(RANDBETWEEN(0,POWER(16,4)),4)
+)
+)
